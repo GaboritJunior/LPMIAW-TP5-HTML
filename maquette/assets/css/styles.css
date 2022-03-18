@@ -1,0 +1,346 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Regles generales */
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.4rem;
+  /* 14px par défaut */
+  font-family: "Poppins", sans-serif;
+  /*font-family: 'Noto sans', sans-serif;*/
+}
+
+a, a:hover, a:visited {
+  /* ATTENTION LES LIENS SONT BLANC DANS CE MODELE*/
+  color: #FFF;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/*******************************/
+/* Starter: Prsentation       */
+/*****************************/
+.presentation {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.presentation h1 {
+  font-size: 8rem;
+  padding-bottom: 10rem;
+}
+
+/********************/
+/* HEADER:         */
+/******************/
+.nav {
+  height: 10vh;
+  background: #373c3f;
+  padding-left: 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav .nav__titre {
+  color: #dadfe2;
+  font-size: 1.5em;
+}
+.nav .nav__liens {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: -50vw;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  background: #222;
+  transition: left 1s;
+  font-size: 1.5rem;
+}
+.nav .nav__liens .liens__lien {
+  padding: 15px 0;
+  text-transform: uppercase;
+}
+.nav .nav__case {
+  display: none;
+}
+.nav .nav__case:checked ~ .nav__liens {
+  left: 0;
+}
+.nav .nav__case:checked ~ .nav__label::before {
+  font-size: 1.6em;
+  content: "✖";
+  padding: 23px 30px 22px 32px;
+}
+.nav .nav__label::before {
+  color: #fff;
+  content: "≡";
+  font-size: 2.5em;
+  font-weight: 400;
+  background: #222;
+  padding: 16px 30px 14px 30px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 30vh;
+  background: linear-gradient(to bottom right, #19b4c6, #078ba4);
+}
+.header .header__titre {
+  padding-left: 5%;
+  padding-bottom: 5%;
+  font-size: 6.5vw;
+  width: 85vw;
+  color: #fff;
+}
+.header .header__titre .titre__retour {
+  display: block;
+}
+.header .header__adresse {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5%;
+  font-size: 5vw;
+  width: 83.5vw;
+  color: #9fd5da;
+}
+.header .header__adresse .adresse__chevron {
+  color: #fff;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #27212b;
+  font-size: 3vw;
+}
+.section .section__citation {
+  padding: 10% 10%;
+  color: #8f829c;
+}
+.section .section__chevron {
+  padding: 10% 10%;
+  font-size: 4vw;
+  background: #bc3184;
+  color: #fff;
+}
+
+.aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.aside .aside__chevron {
+  font-size: 10vw;
+  padding: 40vw 47vw;
+  background: #5a0fa0;
+  color: #fff;
+}
+
+.main {
+  background: #ebebeb;
+  padding: 10%;
+}
+.main .main__url {
+  padding-bottom: 5%;
+  font-size: 6vw;
+  color: #018ca0;
+}
+.main .main__paragraphes {
+  color: #727272;
+}
+.main .main__paragraphes .paragraphes__paragraphe {
+  padding: 5% 0;
+  width: 90%;
+  font-size: 3.5vw;
+}
+.main .main__paragraphes .paragraphes__paragraphe--desktop {
+  display: none;
+}
+
+@media screen and (min-width: 640px) {
+  .nav {
+    flex-direction: row-reverse;
+  }
+  .nav .nav__titre {
+    display: none;
+  }
+  .nav .nav__liens {
+    position: inherit;
+    background: inherit;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: inherit;
+    width: 550px;
+    height: 10vh;
+  }
+  .nav .nav__label::before {
+    display: none;
+  }
+
+  .header {
+    height: 50vh;
+  }
+  .header .header__titre {
+    font-size: 6vw;
+  }
+  .header .header__adresse {
+    font-size: 4vw;
+    width: 77.5vw;
+  }
+
+  .section {
+    font-size: 3vw;
+  }
+  .section .section__citation {
+    padding: 7.5% 10%;
+  }
+  .section .section__chevron {
+    padding: 7.5%;
+  }
+
+  .aside {
+    flex-direction: row;
+  }
+  .aside .aside__chevron {
+    font-size: 5vw;
+    padding: 11.81vw 15.5vw;
+  }
+  .aside .aside__pont {
+    width: 33%;
+  }
+  .aside .aside__portrait {
+    width: 33%;
+  }
+
+  .main {
+    padding: 5%;
+  }
+  .main .main__url {
+    font-size: 5vw;
+  }
+  .main .main__paragraphes {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .main .main__paragraphes .paragraphes__paragraphe {
+    flex: 1 1 40%;
+    font-size: 2.5vw;
+    padding: 3% 5% 2% 0;
+  }
+  .main .main__paragraphes .paragraphes__paragraphe--desktop {
+    display: block;
+  }
+}
+@media screen and (min-width: 980px) {
+  .header {
+    height: 60vh;
+  }
+  .header .header__titre {
+    font-size: 5vw;
+  }
+  .header .header__adresse {
+    font-size: 3vw;
+    width: 65vw;
+  }
+
+  .section {
+    font-size: 2.5vw;
+  }
+  .section .section__citation {
+    padding: 6% 5%;
+  }
+  .section .section__chevron {
+    padding: 6% 6%;
+  }
+
+  .aside .aside__chevron {
+    order: 1;
+    padding: 11.77vw 15.45vw;
+  }
+  .aside .aside__portrait {
+    order: 2;
+  }
+
+  .main .main__url {
+    font-size: 4vw;
+  }
+  .main .main__paragraphes .paragraphes__paragraphe {
+    font-size: 2vw;
+  }
+}
